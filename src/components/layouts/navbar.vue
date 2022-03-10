@@ -10,11 +10,21 @@
         <menu-fold-outlined v-else class="trigger" @click="toggleCollapse"/>
         <!--        Avatar-->
 
-        <!--        <a-avatar style="margin-left: 80px">-->
-        <!--          <template #icon>-->
-        <!--            <UserOutlined />-->
-        <!--          </template>-->
-        <!--        </a-avatar>-->
+<!--    <a-avatar>-->
+<!--      <template #icon>-->
+<!--        <UserOutlined />-->
+<!--      </template>-->
+<!--    </a-avatar>-->
+
+<!--        <a-row>-->
+<!--          <a-col>-->
+<!--                    <a-avatar style="margin-left: 80px">-->
+<!--                      <template #icon>-->
+<!--                        <UserOutlined />-->
+<!--                      </template>-->
+<!--                    </a-avatar>-->
+<!--          </a-col>-->
+<!--        </a-row>-->
 
       </a-layout-header>
     </a-layout>

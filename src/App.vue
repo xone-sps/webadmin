@@ -1,7 +1,8 @@
 <template>
   <a-layout>
     <!--    Menu-->
-    <Sidebar v-model:collapsed="collapsed"/>
+    <Sidebar v-model:collapsed="collapsed"
+    />
     <a-layout>
       <!--    Header-->
       <Navbar v-model:collapsed="collapsed"/>

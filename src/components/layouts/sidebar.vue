@@ -1,8 +1,15 @@
 <template>
   <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
-    <div class="logo" @click="toggleCollapse"/>
+    <div class="logo" @click="toggleCollapse">
+      <a>Logo</a>
+    </div>
     <!--      <a-image :width="40" src="../../assets/logo.png" @click="toggleCollapse"/>-->
     <!--      <a-button @click="toggleCollapse">Logo</a-button>-->
+
+<!--    <div class="logo">-->
+<!--      <img :width="30" src="@/assets/logo.png" alt="logo" />-->
+<!--      <a>HAL Tech</a>-->
+<!--    </div>-->
     <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
       <a-menu-item key="1">
         <video-camera-outlined/>
