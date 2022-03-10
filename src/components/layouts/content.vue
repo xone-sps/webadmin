@@ -1,17 +1,17 @@
 <template>
   <a-layout>
-      <a-layout-content
-          :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '700px' }"
-      >
-        <router-view></router-view>
-      </a-layout-content>
+    <a-layout-content
+        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '700px' }"
+    >
+      <router-view></router-view>
+    </a-layout-content>
   </a-layout>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
+
 export default defineComponent({
-  components: {
-  },
+  components: {},
   setup() {
     return {
       selectedKeys: ref<string[]>(['1']),

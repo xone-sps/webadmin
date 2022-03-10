@@ -1,14 +1,55 @@
 <template>
-<a-layout-content>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
-</a-layout-content>
+  <a-layout-content>
+    <a-row>
+      <a-col :span="12">
+        <a-card size="small" title="Small size card" style="width: 300px">
+          <template #extra><a href="#">more</a></template>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="12">
+        <a-card size="small" title="Small size card" style="width: 300px">
+          <template #extra><a href="#">more</a></template>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
+      </a-col>
+    </a-row>
+    <br/>
+    <a-row>
+      <a-col :span="8">
+        <a-card title="Default size card" style="width: 300px">
+          <template #extra><a href="#">more</a></template>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="8">
+        <a-card title="Default size card" style="width: 300px">
+          <template #extra><a href="#">more</a></template>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="8">
+        <a-card title="Default size card" style="width: 300px">
+          <template #extra><a href="#">more</a></template>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
+      </a-col>
+    </a-row>
+  </a-layout-content>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import {Options, Vue} from 'vue-class-component';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Options({
@@ -16,5 +57,7 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
     HelloWorld,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+
+}
 </script>

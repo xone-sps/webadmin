@@ -1,42 +1,51 @@
 <template>
-    <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
-      <div class="logo" />
-      <a-button @click="toggleCollapse">Logo</a-button>
-      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <a-menu-item key="1">
-          <user-outlined />
-          <span>nav 1</span>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <video-camera-outlined />
-          <span>nav 2</span>
-        </a-menu-item>
-        <a-menu-item key="3">
-          <upload-outlined />
-          <span>nav 3</span>
-        </a-menu-item>
-      </a-menu>
-    </a-layout-sider>
+  <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+    <div class="logo" @click="toggleCollapse"/>
+    <!--      <a-image :width="40" src="../../assets/logo.png" @click="toggleCollapse"/>-->
+    <!--      <a-button @click="toggleCollapse">Logo</a-button>-->
+    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+      <a-menu-item key="1">
+        <video-camera-outlined/>
+        <span>nav 2</span>
+      </a-menu-item>
+      <a-menu-item key="2">
+        <upload-outlined/>
+        <span>nav 3</span>
+      </a-menu-item>
+
+      <a-sub-menu key="sub1">
+        <template #title>
+            <span>
+              <user-outlined/>
+              <span>User</span>
+            </span>
+        </template>
+        <a-menu-item key="3">Tom</a-menu-item>
+        <a-menu-item key="4">Bill</a-menu-item>
+        <a-menu-item key="5">Alex</a-menu-item>
+      </a-sub-menu>
+
+    </a-menu>
+  </a-layout-sider>
 </template>
 <script lang="ts">
 import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
 } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
+
 export default defineComponent({
   components: {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
   },
-  props:["collapsed"],
-  setup() {
-        const toggleCollapse = () =>{
-         emit("update:collapsed",!props.collapsed);
+  props: ["collapsed"],
+  setup(props, {emit}) {
+    const toggleCollapse = () => {
+      emit("update:collapsed", !props.collapsed);
     }
     return {
       selectedKeys: ref<string[]>(['1']),
@@ -46,6 +55,13 @@ export default defineComponent({
 });
 </script>
 <style>
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
 #components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
   line-height: 64px;

@@ -1,13 +1,21 @@
 <template>
   <a-layout>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
+      <a-layout-header style="background: #fff; padding-left: 12px">
         <menu-unfold-outlined
             v-if="collapsed"
             class="trigger"
-            @click="() => (collapsed = !collapsed)"
+            @click="toggleCollapse"
         />
-        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+        <menu-fold-outlined v-else class="trigger" @click="toggleCollapse"/>
+        <!--        Avatar-->
+
+        <!--        <a-avatar style="margin-left: 80px">-->
+        <!--          <template #icon>-->
+        <!--            <UserOutlined />-->
+        <!--          </template>-->
+        <!--        </a-avatar>-->
+
       </a-layout-header>
     </a-layout>
   </a-layout>
@@ -16,20 +24,22 @@
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
+  UserOutlined
 } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
+
 export default defineComponent({
   components: {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
+    UserOutlined
   },
-  props:["collapsed"],
-  setup() {
-    const collapsed = ref<boolean>(false);
-    return {
-      selectedKeys: ref<string[]>(['1']),
-      collapsed,
+  props: ["collapsed"],
+  setup(props, {emit}) {
+    const toggleCollapse = () => {
+      emit("update:collapsed", !props.collapsed);
     };
+    return {toggleCollapse};
   },
 });
 </script>
